@@ -1,4 +1,4 @@
-@import 'colors/one-dark.css';
+@import '/home/kyst/.cache/wal/colors-waybar.css';
 
 * {
     border: none;
@@ -17,23 +17,23 @@ window#waybar {
 }
 
 tooltip {
-    background: @bg0;
-    border: 1px solid @bg3;
+    background: @background;
+    border: 1px solid @color10;
     border-radius: 12px;
 }
 
 tooltip label {
-    color: @fg;
+    color: @foreground;
     padding: 6px;
 }
 
 #workspaces {
-    background-color: @bg0;
+    background-color: @background;
     padding: 5px 3px;
     margin: 0 0 0 12px;
     border-radius: 18px;
-    border: 1px solid @bg1;
-    color: @fg;
+    border: 1px solid @color0;
+    color: @foreground;
 }
 
 #workspaces button {
@@ -41,29 +41,29 @@ tooltip label {
     margin: 0px 3px;
     border-radius: 50px;
     color: transparent;
-    background-color: @bg1;
+    background-color: @color0;
     transition: all 0.3s ease-in-out
 }
 
 #workspaces button.active {
-    background-color: @blue;
-    color: @bg0;
+    background-color: @color4;
+    color: @background;
     min-width: 50px;
     transition: all 0.3s ease-in-out;
     font-size: 13px;
 }
 
 #workspaces button:hover {
-    background-color: @purple;
-    color: @bg0;
+    background-color: @color5;
+    color: @background;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
 }
 
-#workspace button.urgent {
-    background-color: @red;
-    color: @bg0;
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @background;
     border-radius: 16px;
     min-width: 45px;
     background-size: 400% 400%;
@@ -75,30 +75,30 @@ tooltip label {
 #custom-fcitx,
 #custom-notification,
 #clock {
-    background-color: @bg0;
+    background-color: @background;
     padding: 0 15px 0 15px;
     margin: 0 0 0 12px;
     border-radius: 45px;
-    border: 1px solid @bg1;
+    border: 1px solid @color0;
 }
 
 #clock {
-    color: @blue;
+    color: @color4;
 }
 
 #custom-notification {
-    color: @fg;
+    color: @foreground;
     margin: 0 12px 0 12px;
 }
 
 #custom-fcitx {
-    color: @green;
+    color: @color2;
 }
 
 #pulseaudio {
-    color: @yellow;
+    color: @color3;
 }
 
 #network {
-    color: @purple;
+    color: @color5;
 }
