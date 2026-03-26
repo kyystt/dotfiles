@@ -7,6 +7,9 @@ return {
             "icon",
             "permissions",
         },
+        view_options = {
+            show_hidden = true,
+        },
 
         float = {
             enable = true,
