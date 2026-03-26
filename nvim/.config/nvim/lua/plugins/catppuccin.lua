@@ -26,7 +26,7 @@ return {
         })
 
     -- Aplica o tema
-    vim.cmd.colorscheme("catppuccin")
+    -- vim.cmd.colorscheme("catppuccin")
 
     end,
 } 
