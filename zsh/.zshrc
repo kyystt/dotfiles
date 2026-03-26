@@ -52,7 +52,7 @@ echo -e "${NEWLINE}\033[48;2;46;52;64;38;2;216;222;233m $0 \033[0m\033[48;2;59;6
 
 alias ls='exa -l'
 alias grep='grep --color=auto'
-
+alias v='nvim'
 alias ghidra='/opt/ghidra/ghidra/ghidraRun'
 
 export HYPRSHOJT_DIR="$HOME/Pictures/Screenshots"
