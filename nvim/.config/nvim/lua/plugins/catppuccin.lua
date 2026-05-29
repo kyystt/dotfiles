@@ -24,9 +24,5 @@ return {
                 treesitter = true,
             },
         })
-
-    -- Aplica o tema
-    -- vim.cmd.colorscheme("catppuccin")
-
     end,
 } 
