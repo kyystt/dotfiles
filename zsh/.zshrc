@@ -63,3 +63,11 @@ export HYPRSHOJT_DIR="$HOME/Pictures/Screenshots"
 #fi
 
 export PATH=$PATH:/home/kyst/.local/share/gem/ruby/3.4.0/bin
+
+function swap() {
+    mv "$1" "$1._tmp" && mv "$2" "$1" && mv "$1._tmp" "$2";
+}
+
+function conf() {
+    cd $HOME/dotfiles/
+}
