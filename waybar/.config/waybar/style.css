@@ -6,7 +6,7 @@
 
     font-family: "Adwaita Sans", "JetbrainsMono Nerd Font Propo", sans-serif;
     font-weight: bold;
-
+    font-size: 16px;
     min-height: 0;
     padding: 0;
     margin: 0;
@@ -50,7 +50,7 @@ tooltip label {
     color: @background;
     min-width: 50px;
     transition: all 0.3s ease-in-out;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #workspaces button:hover {
@@ -74,6 +74,7 @@ tooltip label {
 #network,
 #custom-fcitx,
 #custom-notification,
+#battery,
 #clock {
     background-color: @background;
     padding: 0 15px 0 15px;
@@ -101,4 +102,30 @@ tooltip label {
 
 #network {
     color: @color5;
+}
+#battery {
+    color: @foreground;
+}
+
+#battery.charging {
+    color: @color2; 
+}
+
+#battery.warning:not(.charging) {
+    color: @color3;
+}
+
+#battery.critical:not(.charging) {
+    color: @color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: @foreground;
+    }
 }

@@ -11,6 +11,7 @@
         "pulseaudio",
         "custom/fcitx",
         "network",
+        "battery",
         "custom/notification"
     ],
     "hyprland/workspaces": {
@@ -41,8 +42,8 @@
         "tooltip": false
     },
     "clock": {
-        "interval": 60,
-        "format": "{:%H:%M}",
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
         "max-length": 25
     },
     "power-profiles-daemon": {
@@ -57,7 +58,7 @@
         }
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "Leaked IP xD: {ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -66,9 +67,9 @@
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -78,6 +79,7 @@
             "phone": "",
             "portable": "",
             "car": "",
+            "blutetooth": "󰂰",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
@@ -101,5 +103,18 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     }
 }
