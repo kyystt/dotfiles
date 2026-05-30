@@ -27,9 +27,9 @@ mainbox {
     children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
     background-color:            transparent;
 
-    spacing:                     24px;
+    spacing:                     30px;
     margin:                      0px;
-    padding:                     100px 400px;
+    padding:                     10% 20%;
 }
 
 /* Inputbar --------------------------------------------------- */
@@ -41,8 +41,8 @@ inputbar {
     text-color:                  @text;
 
     spacing:                     12px;
-    margin:                      0% 28%;
-    padding:                     14px;
+    margin:                      0% 15%;
+    padding:                     12px;
 }
 
 prompt {
@@ -69,8 +69,8 @@ entry {
 /* Listview --------------------------------------------------- */
 listview {
     cursor:                      "default";
-    columns:                     6;
-    lines:                       4;
+    columns:                     4;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -82,8 +82,8 @@ listview {
     background-color:            transparent;
     text-color:                  @text;
 
-    spacing:                     0px;
-    margin:                      0px;
+    spacing:                     20px;
+    margin:                      20px 0px;
     padding:                     0px;
 }
 
@@ -118,14 +118,14 @@ element {
     text-color:                  @text;
     orientation:                 vertical;
 
-    spacing:                     16px;
+    spacing:                     10px;
     margin:                      0px;
-    padding:                     36px 0px;
+    padding:                     30px 10px;
 }
 
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        72px;
+    size:                        64px;
     cursor:                      inherit;
 }
