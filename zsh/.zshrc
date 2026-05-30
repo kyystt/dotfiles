@@ -53,7 +53,7 @@ echo -e "${NEWLINE}\033[48;2;46;52;64;38;2;216;222;233m $0 \033[0m\033[48;2;59;6
 alias ls='exa -l'
 alias grep='grep --color=auto'
 alias v='nvim'
-alias ghidra='/opt/ghidra/ghidra/ghidraRun'
+alias objdump='objdump --disassembler-color=on'
 
 export HYPRSHOJT_DIR="$HOME/Pictures/Screenshots"
 
@@ -61,5 +61,3 @@ export HYPRSHOJT_DIR="$HOME/Pictures/Screenshots"
 #if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
 #    eval "$(starship init zsh)"
 #fi
-
-export PATH=$PATH:/home/kyst/.local/share/gem/ruby/3.4.0/bin
