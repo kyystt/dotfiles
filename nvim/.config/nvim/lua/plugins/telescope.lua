@@ -3,17 +3,5 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    },
-
-    config = function()
-        require('telescope').setup({
-            defaults = {
-                layout_config = {
-                    horizontal = {   
-                        preview_cutoff = 0,
-                    },
-                },
-            },
-        })
-    end,
+    }
 }

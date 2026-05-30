@@ -11,7 +11,7 @@ function M.pwn_template()
         local template = {
             "from pwn import *",
             "",
-            "elf = ELF(\"./" .. binary .. "\")",
+            "elf = ELF(\"" .. binary .. "\")",
         }
 
         if libc and libc ~= "None" then
