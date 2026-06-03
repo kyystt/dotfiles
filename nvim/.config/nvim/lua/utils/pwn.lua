@@ -51,6 +51,10 @@ function M.pwn_template()
         end
 
         local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+        if libc and libc ~= "None" then
+            row = row + 1
+        end
+
         vim.api.nvim_buf_set_lines(0, row - 1, row - 1, false, template)
         vim.api.nvim_win_set_cursor(0, {row + 22, 4})
     end
