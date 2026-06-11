@@ -55,7 +55,7 @@ function M.pwn_template()
         local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
 
         vim.api.nvim_buf_set_lines(0, row - 1, row - 1, false, template)
-        vim.api.nvim_win_set_cursor(0, {row + 22, 4})
+        vim.api.nvim_win_set_cursor(0, {row + 25, 4})
     end
 
     require("telescope.builtin").find_files({
