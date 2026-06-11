@@ -2,10 +2,9 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "saghen/blink.cmp", -- Mantemos o Blink em vez do velho cmp_nvim_lsp!
+        "saghen/blink.cmp",
     },
     config = function()
-        -- 1. Pega os superpoderes do Blink
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         local keymap = vim.keymap
 
@@ -27,7 +26,7 @@ return {
         })
 
         -- ==========================================
-        -- 3. Atalhos (Só ativam quando o LSP carrega!)
+        -- 3. Atalhos
         -- ==========================================
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -69,27 +68,23 @@ return {
         -- ==========================================
         -- 4. Formatação Automática (Ao Salvar)
         -- ==========================================
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            callback = function(ev)
-                local ft = vim.bo[ev.buf].filetype
-                local cpp_like = vim.tbl_contains({ "c", "cpp", "objc", "objcpp" }, ft)
-
-                if cpp_like then
-                    vim.lsp.buf.format({
-                        bufnr = ev.buf,
-                        async = false,
-                        filter = function(client)
-                            return client.name == "clangd"
-                        end,
-                    })
-                end
-            end,
-        })
-
-        -- ==========================================
-        -- 5. Configuração dos Servidores (API 0.11+)
-        -- ==========================================
-
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --     callback = function(ev)
+        --         local ft = vim.bo[ev.buf].filetype
+        --         local cpp_like = vim.tbl_contains({ "c", "cpp", "objc", "objcpp" }, ft)
+        --
+        --         if cpp_like then
+        --             vim.lsp.buf.format({
+        --                 bufnr = ev.buf,
+        --                 async = false,
+        --                 filter = function(client)
+        --                     return client.name == "clangd"
+        --                 end,
+        --             })
+        --         end
+        --     end,
+        -- })
+        --
         -- Clangd (C++)
         vim.lsp.config("clangd", {
             capabilities = capabilities,
@@ -104,7 +99,7 @@ return {
         })
         vim.lsp.enable("clangd")
 
-        -- Servidores Simples (Python, etc)
+        -- Others
         local servers = { "pyright" }
         for _, server in ipairs(servers) do
             vim.lsp.config(server, {
