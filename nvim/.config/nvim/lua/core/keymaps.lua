@@ -17,3 +17,4 @@ map('n', '<leader>th', '<cmd>Telescope colorscheme enable_preview=true<cr>', { d
 
 -- Org mode
 map('n', '<leader>oa', ':Org agenda<CR>', { desc = 'Agenda Orgmode' })
+map('n', '<leader>oc', ':OrgCapture<CR>', { desc = 'Capturar nova tarefa' })
