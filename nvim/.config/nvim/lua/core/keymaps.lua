@@ -14,3 +14,7 @@ map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 map('n', '<leader>th', '<cmd>Telescope colorscheme enable_preview=true<cr>', { desc = 'Select colorscheme' })
+
+-- Org mode
+map('n', '<leader>oa', ':Org agenda<CR>', { desc = 'Agenda Orgmode' })
+map('n', '<leader>oc', ':OrgCapture<CR>', { desc = 'Capturar nova tarefa' })
