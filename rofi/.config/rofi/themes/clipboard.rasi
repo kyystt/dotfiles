@@ -1,0 +1,118 @@
+/* config - Clipboard */
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font 14";
+}
+
+/* Config and colors ----------------------------------------------- */
+@import "default.rasi"
+
+/* Main Window ------------------------------------------------ */
+window {
+    width:                       100%;
+    height:                      100%;
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    transparency:                "real";
+}
+
+/* ----- Main Box ----- */
+mainbox {
+    orientation:                 vertical;
+    children:                    [ "inputbar", "textbox-help", "message", "listview" ];
+    
+    /* Adicionado um fundo escuro translúcido para dar contraste */
+    background-color:            black / 60%; 
+    spacing:                     16px;
+    margin:                      0px;
+    padding:                     64px;
+}
+
+/* Inputbar --------------------------------------------------- */
+inputbar {
+    children:                    [ "dummy", "entry", "dummy" ];
+    border-radius:               24px;
+    spacing:                     0px;
+    padding:                     128px 64px;
+    orientation:                 horizontal;
+    background-image:            url("~/.current_wallpaper", width);
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+textbox-help {
+    expand:                      false;
+    content:                     " [CTRL DEL]  Delete \n [ALT DEL]   Wipe";
+    border-radius:               12px;
+    background-color:            @shade-bg; /* Certifique-se que existe no default.rasi */
+    text-color:                  white;
+    margin:                      0px;
+    padding:                     6px;
+}
+
+/* Entry input ------------------------------------------------ */
+entry {
+    cursor:                      inherit;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+    border-radius:               12px;
+    background-color:            black / 48%;
+    text-color:                  @text; /* Certifique-se que existe no default.rasi */
+    padding:                     16px;
+    margin:                      0px;
+}
+
+/* ---- Listview ---- */
+listview {
+    cursor:                      "default";
+    columns:                     2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    background-color:            transparent;
+    text-color:                  @foreground;
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* ---- Elements ---- */
+element {
+    cursor:                      pointer;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     6px;
+}
+
+/* ADICIONADO: Estado selecionado para imitar a imagem */
+element selected.normal {
+    background-color:            white / 10%;
+    border:                      1px solid;
+    border-color:                white / 30%; /* Adapte para a cor da sua borda */
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    horizontal-align:            0.0;
+}
+
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
