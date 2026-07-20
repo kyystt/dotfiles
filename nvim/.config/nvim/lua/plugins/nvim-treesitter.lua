@@ -1,25 +1,45 @@
-return { 
+return {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    config = function ()
-        local configs = require("nvim-treesitter.config")
 
-        configs.setup({
-            ensure_installed = {
-                "c", "lua", "vim", "vimdoc", "cpp", "javascript", "html", "sql", "julia", "python", 
-            },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<Enter>", -- set to `false` to disable one of the mappings
-                    node_incremental = "<Enter>",
-                    scope_incremental = false,
-                    node_decremental = "<Backspace>",
-                },
-            },
+    config = function()
+        local treesitter = require("nvim-treesitter")
+
+        treesitter.setup()
+
+        treesitter.install({
+            "c",
+            "lua",
+            "vim",
+            "vimdoc",
+            "cpp",
+            "javascript",
+            "html",
+            "sql",
+            "julia",
+            "python",
+            "vhdl",
+            "systemverilog",
         })
-    end
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = {
+                "c",
+                "lua",
+                "vim",
+                "cpp",
+                "javascript",
+                "html",
+                "sql",
+                "julia",
+                "python",
+                "vhdl",
+                "systemverilog"
+            },
+            callback = function()
+                vim.treesitter.start()
+            end,
+        })
+    end,
 }
