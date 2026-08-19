@@ -9,7 +9,7 @@ function M.pwn_template()
 
     local function write_template(binary, libc)
         local template = {
-            "/usr/bin/env python3",
+            "#!/usr/bin/env python3",
             "",
             "from pwn import *",
             "",
