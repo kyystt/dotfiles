@@ -3,5 +3,6 @@
         "~/.config/waybar/themes/TOP-Minimal-Long"
     ],
     "layer": "top",
+    "exclusive": true,
     "position": "top"
 }
