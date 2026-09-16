@@ -1,0 +1,41 @@
+/* ------------------------------------------ */
+/*              Quiet Orbit                   */
+/*         Minimal macOS-like layout          */
+/* ------------------------------------------ */
+
+{
+    "include": "~/.config/waybar/modules",
+
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+
+    "spacing": 0,
+    "fixed-center": true,
+    "ipc": true,
+
+    "height": 38,
+
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": [
+        "custom/menu",
+        "clock"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces#kanji"
+    ],
+
+    "modules-right": [
+        "mpris",
+        "tray",
+        "custom/swaync",
+        "group/audio",
+        "group/laptop",
+        "custom/power"
+    ]
+}
