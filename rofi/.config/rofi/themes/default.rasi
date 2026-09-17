@@ -15,7 +15,7 @@
 }
 
 window {
-    fullscreen:                  false;
+    fullscreen:                  true;
     transparency:                "real";
     cursor:                      "default";
     background-color:            black / 50%;
