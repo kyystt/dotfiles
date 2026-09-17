@@ -349,6 +349,13 @@
             // "ignored-players": ["firefox"]
             "max-length": 30,
         },
+        "mpris#minimal": {
+            "format": "󰎈  {title}",
+            "format-paused": "󰏤  {title}",
+            "max-length": 22,
+            "ellipsis": "…",
+            "tooltip": true
+        },
 
         "network": {
             "format": "{ifname}",
@@ -495,7 +502,7 @@
         "custom/power": {
             "format": "⏻ ",
             "exec": "echo ; echo 󰟡 power // blur",
-            "on-click": "~/.config/hypr/scripts/wlogout.sh",
+            "on-click": "~/.config/wlogout/scripts/wlogout.sh",
             "interval" : 86400, // once every day
             "tooltip": true,
         },

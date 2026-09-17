@@ -1,7 +1,8 @@
 {
     "include": [
-        "~/.config/waybar/themes/TOP-Minimal-Long"
+        "~/.config/waybar/themes/TOP-Quiet-Orbit"
     ],
     "layer": "top",
+    "exclusive": true,
     "position": "top"
 }
