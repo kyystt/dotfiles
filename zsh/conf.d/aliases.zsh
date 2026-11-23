@@ -1,4 +1,5 @@
-alias ls='exa -l --icons=always --group-directories-first'
-alias ll='exa -alF --icons=always --group-directories-first --git'
+alias ls='exa -l --icons=always --group-directories-first --hyperlink=auto'
+alias ll='exa -alF --icons=always --group-directories-first --git --hyperlink=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
+alias rg='rg --hyperlink-format=kitty'

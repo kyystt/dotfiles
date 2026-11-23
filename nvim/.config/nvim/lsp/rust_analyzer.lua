@@ -1,12 +1,16 @@
 ---@type vim.lsp.Config
 return {
     settings = {
-        python = {
-            analysis = {
-                typeCheckingMode = "basic",
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-            },
-        },
+        ["rust-analyzer"] = {},
     },
+
+    before_init = function(params, config)
+        local settings = config.settings["rust-analyzer"]
+
+        settings.detachedFiles = {
+            vim.api.nvim_buf_get_name(0),
+        }
+
+        params.initializationOptions = settings
+    end,
 }

@@ -14,8 +14,8 @@ hl.monitor({
 
 hl.monitor({
     output = "HDMI-A-1",
-    mode = "1398x968",
-    position = "0x0",
+    mode = "1920x1080@60",
+    position = auto,
     scale = 1,
     mirror = "eDP-1",
 })
@@ -80,24 +80,14 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("XDG_MENU_PREFIX", "arch-")
 
 ----------------
--- Permissions
-----------------
-
-hl.permission({
-    binary = "/usr/(bin|local/bin)/hyprpm",
-    type = "plugin",
-    mode = "allow",
-})
-
-----------------
 -- Look and feel
 ----------------
 
 hl.config({
     general = {
-        gaps_in = 5,
-        gaps_out = 10,
-        border_size = 1,
+        gaps_in = 8,
+        gaps_out = 20,
+        border_size = 0,
         col = {
             active_border = "rgb(cdd6f4)",
             inactive_border = "rgba(595959aa)",
@@ -108,9 +98,8 @@ hl.config({
     },
 
     decoration = {
-        rounding = 0,
-        -- rounding_power was 0 in the old config, but 0 is invalid in the
-        -- Lua API. It has no visible effect while rounding is 0, so it is omitted.
+        rounding = 20,
+        rounding_power = 3,
         active_opacity = 1.0,
         inactive_opacity = 0.9,
         fullscreen_opacity = 1.0,
@@ -118,15 +107,15 @@ hl.config({
         dim_strength = 0.35,
         shadow = {
             enabled = true,
-            range = 16,
+            range = 20,
             render_power = 2,
             offset = { 2, 2 },
             color = "rgba(0C0E13A6)",
         },
         blur = {
             enabled = true,
-            size = 5,
-            passes = 3,
+            size = 10,
+            passes = 2,
             ignore_opacity = true,
             new_optimizations = true,
             vibrancy = 0.1696,
@@ -165,24 +154,19 @@ hl.config({
     },
 })
 
--- Hyprbars only registers its configuration keys after the plugin is loaded.
--- hyprpm reload causes Hyprland to reload the config; this guard keeps the
--- initial pass clean and applies these settings on the following pass.
-local _, hyprbarsConfigError = hl.get_config("plugin.hyprbars.enabled")
-if hyprbarsConfigError == nil then
-    hl.config({
-        plugin = {
-            hyprbars = {
-                enabled = true,
-                bar_height = 20,
-                bar_text_size = 16,
-                bar_text_weight = "thin",
-                bar_text_align = "left",
-                bar_text_font = "Iosevka Nerd Font",
-            },
-        },
-    })
-end
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
+})
+
+hl.gesture({
+    fingers = 2,
+    direction = "pinch",
+    action = "cursor_zoom",
+    zoom_level = 1.2,
+    mode = "live"
+})
 
 ----------------
 -- Animations
