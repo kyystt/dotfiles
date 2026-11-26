@@ -27,8 +27,8 @@ return {
         distance_stop_animating = 0.5,
 
         -- insert mode
-        stiffness_insert_mode = 0.2,
-        trailing_stiffness_insert_mode = 0.2,
+        stiffness_insert_mode = 0.25,
+        trailing_stiffness_insert_mode = 0.25,
         damping_insert_mode = 0.9,
         trailing_exponent_insert_mode = 1,
         distance_stop_animating_vertical_bar = 0.1,
