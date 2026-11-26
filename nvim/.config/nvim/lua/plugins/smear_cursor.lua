@@ -14,14 +14,29 @@ return {
 
         -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
         -- Smears and particles will look a lot less blocky.
-        legacy_computing_symbols_support = false,
+        legacy_computing_symbols_support = true,
 
         -- Smear cursor in insert mode.
         -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
         smear_insert_mode = true,
 
-        stiffness = 0.8,
-        trailing_stiffness = 0.5,
+        -- normal mode
+        stiffness = 0.5,
+        trailing_stiffness = 0.35,
+        trailing_exponent = 3,
         distance_stop_animating = 0.5,
+
+        -- insert mode
+        stiffness_insert_mode = 0.2,
+        trailing_stiffness_insert_mode = 0.2,
+        damping_insert_mode = 0.9,
+        trailing_exponent_insert_mode = 1,
+        distance_stop_animating_vertical_bar = 0.1,
+
+
+        -- particles_enabled = true,
+        -- particle_max_num = 200,
+        -- never_draw_over_target = true,
+        time_interval = 7,
     },
 }
