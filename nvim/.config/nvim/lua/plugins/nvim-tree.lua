@@ -27,7 +27,7 @@ return {
             renderer = {
                 highlight_opened_files = "all",
             },
-            git = { enable = false },
+            git = { enable = true },
             tab = {
                 sync = {
                     open = false,
