@@ -8,34 +8,32 @@ return {
 
         treesitter.setup()
 
-        treesitter.install({
+        local ensure_installed = {
             "c",
             "lua",
             "vim",
             "vimdoc",
             "cpp",
-            "javascript",
-            "html",
-            "sql",
-            "julia",
+            "rust",
             "python",
-            "vhdl",
-            "systemverilog",
-        })
+            "latex",
+            "bibtex"
+        }
+
+        treesitter.install(ensure_installed)
 
         vim.api.nvim_create_autocmd("FileType", {
             pattern = {
                 "c",
                 "lua",
                 "vim",
+                "vimdoc",
                 "cpp",
-                "javascript",
-                "html",
-                "sql",
                 "julia",
                 "python",
-                "vhdl",
-                "systemverilog"
+                "tex",
+                "plaintex",
+                "bib"
             },
             callback = function()
                 vim.treesitter.start()
