@@ -1,43 +1,44 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    lazy = false,
-    build = ":TSUpdate",
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	build = ":TSUpdate",
 
-    config = function()
-        local treesitter = require("nvim-treesitter")
+	config = function()
+		local treesitter = require("nvim-treesitter")
 
-        treesitter.setup()
+		treesitter.setup()
 
-        local ensure_installed = {
-            "c",
-            "lua",
-            "vim",
-            "vimdoc",
-            "cpp",
-            "rust",
-            "python",
-            "latex",
-            "bibtex"
-        }
+		local ensure_installed = {
+			"c",
+			"lua",
+			"vim",
+			"vimdoc",
+			"cpp",
+			"rust",
+			"python",
+			"latex",
+			"bibtex",
+		}
 
-        treesitter.install(ensure_installed)
+		treesitter.install(ensure_installed)
 
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = {
-                "c",
-                "lua",
-                "vim",
-                "vimdoc",
-                "cpp",
-                "julia",
-                "python",
-                "tex",
-                "plaintex",
-                "bib"
-            },
-            callback = function()
-                vim.treesitter.start()
-            end,
-        })
-    end,
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = {
+				"c",
+				"lua",
+				"vim",
+				"vimdoc",
+				"cpp",
+				"rust",
+				"julia",
+				"python",
+				"tex",
+				"plaintex",
+				"bib",
+			},
+			callback = function()
+				vim.treesitter.start()
+			end,
+		})
+	end,
 }
