@@ -4,6 +4,8 @@ return {
         formatters_by_ft = {
             c = { "clang-format", lsp_format = "fallback"},
             cpp = { "clang-format", lsp_format = "fallback"},
+            lua = { "stylua", lsp_format = "fallback"},
+            python = { "ruff_format", lsp_format = "fallback"}
         },
         format_on_save = {
             timeout_ms = 500,

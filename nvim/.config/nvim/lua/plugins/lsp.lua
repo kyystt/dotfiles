@@ -196,24 +196,12 @@ return {
         -- Ativação dos servidores
         -- ==========================================
 
-        vim.lsp.config("rust_analyzer", {
-           before_init = function(params, config)
-                local settings = config.settings["rust-analyzer"] or {}
-
-                settings.detachedFiles = {
-                    vim.api.nvim_buf_get_name(0),
-                }
-
-                config.settings["rust-analyzer"] = settings
-                params.initializationOptions = settings
-            end,
-        })
-
         local servers = {
             "clangd",
             "rust_analyzer",
             "pyright",
             "texlab",
+            "lua_ls"
         }
 
         for _, server in ipairs(servers) do
