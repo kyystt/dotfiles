@@ -158,39 +158,39 @@ return {
         -- Formatação automática de C/C++
         -- ==========================================
 
-        local format_group = vim.api.nvim_create_augroup(
-            "UserLspFormat",
-            { clear = true }
-        )
+        -- local format_group = vim.api.nvim_create_augroup(
+        --     "UserLspFormat",
+        --     { clear = true }
+        -- )
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = format_group,
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --     group = format_group,
 
-            callback = function(ev)
-                local filetype = vim.bo[ev.buf].filetype
+        --     callback = function(ev)
+        --         local filetype = vim.bo[ev.buf].filetype
 
-                local cpp_like = vim.tbl_contains({
-                    "c",
-                    "cpp",
-                    "objc",
-                    "objcpp",
-                    "cuda",
-                }, filetype)
+        --         local cpp_like = vim.tbl_contains({
+        --             "c",
+        --             "cpp",
+        --             "objc",
+        --             "objcpp",
+        --             "cuda",
+        --         }, filetype)
 
-                if not cpp_like then
-                    return
-                end
+        --         if not cpp_like then
+        --             return
+        --         end
 
-                vim.lsp.buf.format({
-                    bufnr = ev.buf,
-                    async = false,
+        --         vim.lsp.buf.format({
+        --             bufnr = ev.buf,
+        --             async = false,
 
-                    filter = function(client)
-                        return client.name == "clangd"
-                    end,
-                })
-            end,
-        })
+        --             filter = function(client)
+        --                 return client.name == "clangd"
+        --             end,
+        --         })
+        --     end,
+        -- })
 
         -- ==========================================
         -- Ativação dos servidores
